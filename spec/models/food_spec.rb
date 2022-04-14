@@ -64,4 +64,16 @@ RSpec.describe Food, type: :model do
       expect(Food.by_letter("N")).to eq([food3, food1])
     end
   end
+
+  it 'is invalid with price less than 0.01' do
+    food = Food.new(
+      name: 'Nasi Uduk',
+      description: nil,
+      price: 0.00
+    )
+
+    food.valid?
+
+    expect(food.errors[:price]).to include("must be greater than or equal to 0.01")
+  end
 end

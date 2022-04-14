@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Category, type: :model do
   it 'is valid with a name' do
     category = Category.new(
-      name: 'Indonesian'
+      name: 'Traditional'
     )
 
     expect(category).to be_valid
@@ -21,10 +21,10 @@ RSpec.describe Category, type: :model do
 
   it 'is invalid with a duplicate name' do
     category1 = Category.create(
-      name: 'Indonesian'
+      name: 'Tradisional'
     )
     category2 = Category.new(
-      name: 'Indonesian'
+      name: 'Tradisional'
     )
 
     category2.valid?

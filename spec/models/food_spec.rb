@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  Category.create(name: "Eatable")
   it 'is valid with a name and a description' do
     food = Food.new(
       name: 'Nasi Uduk',
@@ -28,7 +27,7 @@ RSpec.describe Food, type: :model do
     food1 = Food.create(
       name: "Nasi Uduk",
       description: "Betawi style steamed rice cooked in coconut milk. Delicious!",
-      rice: 10000.0,
+      price: 10000.0,
       category_id: 1
     )
     

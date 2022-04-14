@@ -5,7 +5,6 @@ RSpec.describe Category, type: :model do
     category = Category.new(
       name: 'Traditional'
     )
-
     expect(category).to be_valid
   end
 
@@ -13,7 +12,6 @@ RSpec.describe Category, type: :model do
     category = Category.new(
       name: nil
     )
-
     category.valid?
 
     expect(category.errors[:name]).to include("can't be blank")
@@ -26,7 +24,6 @@ RSpec.describe Category, type: :model do
     category2 = Category.new(
       name: 'Tradisional'
     )
-
     category2.valid?
 
     expect(category2.errors[:name]).to include("has already been taken")
